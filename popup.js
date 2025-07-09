@@ -35,4 +35,6 @@ function addToWhitelist() {
 document.addEventListener("DOMContentLoaded", () => {
   updateBlockCount();
   loadWhitelist();
+
+  document.getElementById("addToWhitelist").addEventListener("click", addToWhitelist);
 });
