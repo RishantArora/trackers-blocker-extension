@@ -1,26 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tracker Blocker</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 15px; width: 250px; }
-    h2 { margin: 0 0 10px; }
-    .count { font-size: 32px; font-weight: bold; margin: 10px 0; color: red; }
-    input, button { width: 100%; margin-top: 10px; padding: 5px; }
-    ul { padding-left: 20px; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 15px;
+      width: 250px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+    }
+
+    .count {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 10px 0;
+      color: red;
+    }
+
+    input,
+    button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
-  <h2>🚫 Trackers Blocked</h2>
-  <div id="block-count" class="count">Loading...</div>
+  <main role="main" aria-label="Tracker Blocker Popup">
+    <h2>🚫 Trackers Blocked</h2>
+    <p id="block-count" class="count" aria-live="polite">Loading...</p>
 
-  <h3>Whitelist a Domain</h3>
-  <input type="text" id="domainInput" placeholder="example.com">
-  <button onclick="addToWhitelist()">Add to Whitelist</button>
+    <h3>Whitelist a Domain</h3>
+    <label for="domainInput">Domain:</label>
+    <input
+      type="text"
+      id="domainInput"
+      placeholder="example.com"
+      autocomplete="off"
+      aria-label="Enter domain to whitelist"
+    />
+    
+    <button
+      type="button"
+      onclick="addToWhitelist()"
+      aria-label="Add domain to whitelist"
+    >
+      Add to Whitelist
+    </button>
 
-  <h4>Whitelisted Domains:</h4>
-  <ul id="whitelist"></ul>
+    <h4>Whitelisted Domains:</h4>
+    <ul id="whitelist" aria-label="Whitelisted domains list"></ul>
+  </main>
 
-  <script src="popup.js"></script>
+  <script src="popup.js" defer></script>
 </body>
 </html>
