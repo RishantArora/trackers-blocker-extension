@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tracker Blocker</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 15px; width: 250px; }
+    h2 { margin: 0 0 10px; }
+    .count { font-size: 32px; font-weight: bold; margin: 10px 0; color: red; }
+    input, button { width: 100%; margin-top: 10px; padding: 5px; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <h2>🚫 Trackers Blocked</h2>
+  <div id="block-count" class="count">Loading...</div>
+
+  <h3>Whitelist a Domain</h3>
+  <input type="text" id="domainInput" placeholder="example.com">
+  <button onclick="addToWhitelist()">Add to Whitelist</button>
+
+  <h4>Whitelisted Domains:</h4>
+  <ul id="whitelist"></ul>
+
+  <script src="popup.js"></script>
+</body>
+</html>
