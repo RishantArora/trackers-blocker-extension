@@ -67,9 +67,11 @@ function removeDomainFromWhitelist(domainToRemove) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
   loadTrackerBlockCount();
   renderWhitelist();
 
   const addBtn = document.querySelector("button");
   addBtn.addEventListener("click", addDomainToWhitelist);
+
 });
